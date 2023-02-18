@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
-from tools import *
-import sys
+import sys,time
+from threading import Thread
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -79,6 +79,7 @@ class MainWindow(QMainWindow):
     def update(self):#This updates the different frames so that each widget can be seen
         for widget in self.widgets.values():
             widget.show()
+
 
 class Progressbar(QProgressBar):
     def __init__(self,window, pos,text= "", backgroundcolor = "orange", barcolor = "red", min = 0, max = 100):
